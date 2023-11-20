@@ -10,7 +10,7 @@ export const getVideogames = () => async (dispatch) => {
         payload: data 
     });
     } catch (error) {
-      console.error("Error en actions", error);
+      console.error("Error en actions todos los juegos", error);
     }
   };
   
