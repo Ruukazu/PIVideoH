@@ -40,8 +40,8 @@ const Card = ({
         width="300px"
         height="200px"
       />
-      <h5>🧩 Genre: {genres?.join(',  ')}</h5>
-      <h5>🌟 Rating: {rating}</h5>
+      <h5> Genre: {genres?.join(',  ')}</h5>
+      <h5> Rating: {rating}</h5>
       <Link to={`/details/${id}`}>
         <button style={InfoStyle}>Mas Informacion </button>
       </Link>

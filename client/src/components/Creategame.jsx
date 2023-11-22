@@ -117,7 +117,7 @@ function Creategame() {
 
 
  
-let validateUrl = /(http(s?):)([/|.|\w|\s|-])*.(?:jpg|gif|png)/;
+  let validateUrl = /^https?:\/\/[\w-]+(\.[\w-]+)+[/#?]?.*$/;
 
 function validate(input) {
 
@@ -170,65 +170,66 @@ function validate(input) {
     dispatch(getVideogames());
   }, [dispatch]);
 
-  function handleChange(e) {
+  function handleChange(event) {
     setInput({
       ...input,
-      [e.target.name]: e.target.value, // setea el valor del target.
+      [event.target.name]: event.target.value, 
     });
     setErrors(
       validate({
         ...input,
-        [e.target.name]: e.target.value,
+        [event.target.name]: event.target.value,
       })
     );
   }
 
-  function handleSelectGenres(e) {
+  function handleSelectGenres(event) {
     setInput({
       ...input,
-      genres: [...new Set([...input.genres, e.target.value])],
+      genres: [...new Set([...input.genres, event.target.value])],
     });
     setErrors(
       validate({
         ...input,
-        [e.target.name]: e.target.value,
+        [event.target.name]: event.target.value,
       })
     );
   }
 
-  function handleSelectPlatforms(e) {
+  function handleSelectPlatforms(event) {
     setInput({
       ...input,
-      platforms: [...new Set([...input.platforms, e.target.value])],
+      platforms: [...new Set([...input.platforms, event.target.value])],
     });
     setErrors(
       validate({
         ...input,
-        [e.target.name]: e.target.value,
+        [event.target.name]: event.target.value,
       })
     );
   }
-  const handleDeleteGenres = (e) => {
+  const handleDeleteGenres = (event) => {
     setInput({
       ...input,
-      genres: input.genres.filter((el) => el !== e),
+      genres: input.genres.filter((el) => el !== event),
     });
   };
-  const handleDeletePlatforms = (e) => {
+  const handleDeletePlatforms = (event) => {
     setInput({
       ...input,
-      platforms: input.platforms.filter((el) => el !== e),
+      platforms: input.platforms.filter((el) => el !== event),
     });
   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     setErrors(validate(input));
     let error = validate(input);
     if (Object.values(error).length !== 0) {
+      alert("Hay errrores para corregir");
     } else {
     dispatch(postVideogame(input));
-    alert("A new VideoGame has been created");
+    alert("Se creo el juego exitosamente");
     setInput({
       name: "",
       image: "",
@@ -244,8 +245,8 @@ function validate(input) {
 
 return (
   <div style={formStyles}>
-    <h2 style={h2Styles}>Create Videogame</h2>
-    <form id="form" onSubmit={handleSubmit}>
+    <h2 style={h2Styles}>Creacion de Videojuego</h2>
+    <form  onSubmit={handleSubmit}>
       <div>
         <label style={labelStyles}>Name: </label>
         <input

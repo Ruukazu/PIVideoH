@@ -9,6 +9,7 @@ const Paginado = ({ videogamePerPage, allVideogames, paginado }) => {
     alignItems: 'center',
     margin: '5px',
     fontSize: '20px',
+    cursor: 'pointer'
   };
   
   const ulStyle = {
@@ -20,6 +21,7 @@ const Paginado = ({ videogamePerPage, allVideogames, paginado }) => {
     alignItems: 'center',
     listStyle: 'none',
   };
+
   
   const pageNumbers = Array.from({ length: Math.ceil(allVideogames / videogamePerPage) }, (_, index) => index + 1);
 

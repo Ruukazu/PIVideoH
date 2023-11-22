@@ -22,7 +22,7 @@ export const getVideogames = () => async (dispatch) => {
         payload: data 
     });
     } catch (error) {
-      console.error("Error en videogames actions", error);
+      console.error("Error en videogames getnombre", error);
     }
   };
   
@@ -47,7 +47,7 @@ export const getVideogames = () => async (dispatch) => {
         payload: data 
     });
     } catch (error) {
-      console.error("Error en videogames actions", error);
+      console.error("Error en videogames post", error);
     }
   };
   
@@ -59,7 +59,7 @@ export const getVideogames = () => async (dispatch) => {
         payload: data 
     });
     } catch (error) {
-      console.error("Error en videogames actions", error);
+      console.error("Error en videogames detail", error);
     }
   };
   

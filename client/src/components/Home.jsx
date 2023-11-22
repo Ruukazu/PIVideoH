@@ -113,29 +113,30 @@ const Home = () => {
     dispatch(getGenres());
   }, [dispatch]);
 
-  const handleFilterGenres = (e) => {
-    dispatch(filterByGenres(e.target.value));
+  const handleFilterGenres = (event) => {
+    event.preventDefault();
+    dispatch(filterByGenres(event.target.value));
     setCurrentPage(1);
   };
 
-  const handleFilterCreated = (e) => {
-    e.preventDefault();
-    dispatch(filterCreated(e.target.value));
+  const handleFilterCreated = (event) => {
+    event.preventDefault();
+    dispatch(filterCreated(event.target.value));
   };
 
-  const handleRating = (e) => {
-    e.preventDefault();
-    dispatch(orderByRating(e.target.value));
+  const handleRating = (event) => {
+    event.preventDefault();
+    dispatch(orderByRating(event.target.value));
     setCurrentPage(1);
   };
 
-  function handleClick(e) {
-    e.preventDefault();
+  function handleClick(event) {
+    event.preventDefault();
     dispatch(getVideogames());
   }
-  const handleSort = (e) => {
-    e.preventDefault();
-    dispatch(orderByName(e.target.value));
+  const handleSort = (event) => {
+    event.preventDefault();
+    dispatch(orderByName(event.target.value));
     setCurrentPage(1);
   };
 
@@ -224,8 +225,8 @@ const Home = () => {
 
         <button
           style={pagStyle}
-          onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
-          disabled={currentVideogame.length < 15}
+          onClick={() => setCurrentPage((nextPage) => nextPage + 1)}
+          disabled={currentVideogame.length <= 15}
         >
           Siguiente
         </button>

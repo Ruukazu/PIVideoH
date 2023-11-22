@@ -61,7 +61,7 @@ const initialState = {
         const genresFilter =
           action.payload === "All"
             ? allVideogames2
-            : allVideogames2.filter((e) => e.genres.includes(action.payload));
+            : allVideogames2.filter((gen) => gen.genres.includes(action.payload));
         return {
           ...state,
           videogames: genresFilter,

@@ -62,7 +62,7 @@ const Detail = () => {
         <img
           style={imageStyle}
           src={myVideogame.background_image || myVideogame.image}
-          alt=""
+          alt="NIF"
           width="400px"
           height="250px"
         />
@@ -70,9 +70,9 @@ const Detail = () => {
           <h4> Rating: {myVideogame.rating} </h4>
           <h4> Released: {myVideogame.released}</h4>
           <h4>
-            🎮 Platforms:{" "}
-            {myVideogame.platforms?.map((pl, i) => (
-              <li key={i}>{pl.name}</li>
+            Platforms:{" "}
+            {myVideogame.platforms?.map((plat, i) => (
+              <li key={i}>{plat.name}</li>
             ))}
           </h4>
           <h4>
