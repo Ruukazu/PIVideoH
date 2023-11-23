@@ -72,7 +72,7 @@ const Detail = () => {
           <h4>
             Platforms:{" "}
             {myVideogame.platforms?.map((plat, i) => (
-              <li key={i}>{plat.name}</li>
+              <li key={i}>{plat}</li>
             ))}
           </h4>
           <h4>

@@ -226,7 +226,7 @@ function validate(input) {
     setErrors(validate(input));
     let error = validate(input);
     if (Object.values(error).length !== 0) {
-      alert("Hay errrores para corregir");
+      alert("alerta");
     } else {
     dispatch(postVideogame(input));
     alert("Se creo el juego exitosamente");
@@ -322,7 +322,7 @@ return (
           {input.genres.map((e) => (
             <li style={liStyles}>
               <div>{e + ""}</div>
-              <button style={buttonXStyle} value={e} onClick={() => handleDeleteGenres(e)}>
+              <button type="button"  style={buttonXStyle} value={e} onClick={() => handleDeleteGenres(e)}>
                 x
               </button>
             </li>
@@ -349,6 +349,7 @@ return (
             <li style={liStyles}>
               <div>{e + ""}</div>
               <button
+                type="button" 
                 style={buttonXStyle}
                 value={e}
                 onClick={() => handleDeletePlatforms(e)}

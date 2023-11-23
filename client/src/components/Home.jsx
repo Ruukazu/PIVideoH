@@ -218,7 +218,7 @@ const Home = () => {
         <button
           style={pagStyle}
           onClick={() => setCurrentPage((prevPage) => prevPage - 1)}
-          disabled={currentPage <= 1}
+          disabled={currentPage < 1}
         >
           Anterior
         </button>
@@ -226,7 +226,7 @@ const Home = () => {
         <button
           style={pagStyle}
           onClick={() => setCurrentPage((nextPage) => nextPage + 1)}
-          disabled={currentVideogame.length <= 15}
+          disabled={currentVideogame.length < 15}
         >
           Siguiente
         </button>
